@@ -27,6 +27,12 @@ class Controller extends BaseController
      */
     public function __invoke(WithdrawalRequest $request)
     {
+        try {
+            $this->manager->withdrawal();
+        } catch (\Exception $e) {
+
+        }
+
         return response()->json(['withdrawal']);
     }
 }

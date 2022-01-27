@@ -27,6 +27,12 @@ class Controller extends BaseController
      */
     public function __invoke(RefillRequest $request)
     {
+        try {
+            $this->manager->refill();
+        } catch (\Exception $e) {
+
+        }
+
         return response()->json(['refill']);
     }
 }

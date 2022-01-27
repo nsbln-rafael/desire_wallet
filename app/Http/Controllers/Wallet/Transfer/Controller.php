@@ -27,6 +27,12 @@ class Controller extends BaseController
      */
     public function __invoke(TransferRequest $request)
     {
+        try {
+            $this->manager->transfer();
+        } catch (\Exception $e) {
+
+        }
+
         return response()->json(['transfer']);
     }
 }

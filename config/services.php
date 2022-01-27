@@ -1,5 +1,7 @@
 <?php
 
+use App\Strategies\Wallet;
+
 return [
 
     /*
@@ -30,4 +32,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'walletOperationStrategies' => [
+        Wallet\TransferOperationStrategy::class,
+        Wallet\RefillOperationStrategy::class,
+        Wallet\WithdrawalOperationStrategy::class,
+    ],
 ];
